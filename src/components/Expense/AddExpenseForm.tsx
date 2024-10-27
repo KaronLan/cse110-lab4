@@ -14,9 +14,9 @@ const AddExpenseForm = () => {
 
     // Exercise: Add add new expense to expenses context array
     const initialexpense:Expense = {
-      id: String(expenses.length + 1),
+      id: Date.now().toString(36),
       name: name,
-      cost: cost
+      cost: Number(cost)
     }
     setExpenses([initialexpense,...expenses])
   };
