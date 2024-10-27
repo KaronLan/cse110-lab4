@@ -3,8 +3,16 @@ import Budget from "../components/Budget/Budget";
 import ExpenseList from "../components/Expense/ExpenseList";
 import ExpenseTotal from "../components/Expense/ExpenseTotal";
 import Remaining from "../components/Remaining";
+import { useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 
 export const MyBudgetTracker = () => {
+  const { budget,setBudget } = useContext(AppContext);
+  const [budgetfiller, setBudgetFiller] = useState(0);
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setBudget(budgetfiller);
+  };
   return (
     <div className="container">
       <h1 className="mt-3">My Budget Planner</h1>
@@ -31,6 +39,18 @@ export const MyBudgetTracker = () => {
           <AddExpenseForm />
         </div>
       </div>
+      <h3 className="mt-3" >Update Budget</h3>
+      <form onSubmit={(event) => onSubmit(event)}>
+      <div className="col-sm"><input
+        onChange={(event) => 
+          setBudgetFiller(Number(event.target.value))
+        }
+        ></input></div>
+        <button type="submit" className="btn btn-primary mt-3">Update Budget</button>
+      </form>
+        
     </div>
   );
 };
+
+
