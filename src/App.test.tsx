@@ -175,7 +175,7 @@ describe('Budget Balance Verification',() =>{
     const newexpense4 = screen.getByText("Spent so far: $1150");
     expect(newexpense4).toBeInTheDocument;
     const newRemain4 = screen.getByText("Remaining: $-150");
-    expect(newRemain4).toBeInTheDocument;
+    expect(newRemain4).toBeNull;
     
   })
   
