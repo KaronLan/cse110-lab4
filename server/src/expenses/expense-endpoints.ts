@@ -7,11 +7,12 @@ export function createExpenseEndpoints(app: any, expenses: any) {
 
         createExpenseServer(req, res, expenses);
 
+
     });
 
     // Delete an expense
     app.delete("/expenses/:id", (req: Request, res: Response) => {
-
+        
         deleteExpense(req, res, expenses);
 
     });
