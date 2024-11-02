@@ -31,9 +31,7 @@ export function deleteExpense(req: Request, res: Response, expenses: Expense[]) 
     }
     
     const deletedExpense = expenses.splice(expenseIndex, 1)[0];
-    res.status(200).send(deletedExpense);
-
-    // res.status(200).send("Successfully deleted");
+    res.status(200).send("Deleted: " +deletedExpense);
 }
 
 export function getExpenses(req: Request, res: Response, expenses: Expense[]) {

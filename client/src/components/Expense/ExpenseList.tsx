@@ -8,8 +8,8 @@ import { fetchExpenses } from "../../utils/expense-utils";
 const ExpenseList = () => {
   const { expenses, setExpenses } = useContext(AppContext);
   
-// Fetch expenses on component mount
-useEffect(() => {
+  // Fetch expenses on component mount
+  useEffect(() => {
 	loadExpenses();
   }, []);
 
