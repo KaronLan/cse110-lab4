@@ -13,9 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "express": "^4.21.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
